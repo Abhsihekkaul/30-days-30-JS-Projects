@@ -20,11 +20,10 @@ const SYMBOL_COUNT = {
 }
 
 const SYMBOL_VALUESS = {
-    'A' : 2,
+    'A' : 5,
     'B' : 4,
-    'C' : 6,
-    'D' : 8
-
+    'C' : 3,
+    'D' : 2
 }
 
 
@@ -71,9 +70,18 @@ const getBet = (balance,lines) => {
     }
 }
 
+// Object.entries() returns the key and values of any object types
+
 const spin = () => {
-    
-}
+    const symbols = [] // generating the array or row for the spin 
+    for(const[symbol,count] of Object.entries(SYMBOL_COUNT)){
+        for(let i = 0; i < count; i++){
+            symbols.push(symbol);
+        }
+    }
+    console.log(symbols);
+};
+spin();
 
 
 
